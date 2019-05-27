@@ -3,7 +3,6 @@ class Nodo:
         self.valor = valor
         self.izq = izq
         self.der = der
-n1 = Nodo(25, Nodo(10, Nodo(5), Nodo(18)), Nodo(40, None, Nodo(50)))
 
 def sumar(arbol):
     if arbol == None: return 0
@@ -26,8 +25,7 @@ def insert(arbol, data):
         if data < arbol.valor:
             return Nodo(arbol.valor, insert(arbol.izq, data), arbol.der)
         return Nodo(arbol.valor, arbol.izq, insert(arbol.der, data))
-        
 
-print (a_lista(n1))
-print (a_lista(insert(n1,58)))
-print (buscar(insert(n1,58), 58))
+def listToTree(arbol, list):
+    for x in list:
+        insert(arbol, x)
